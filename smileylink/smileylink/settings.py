@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'social_app',
+    'feedback',
 
     'allauth',
     'allauth.account',
@@ -120,13 +121,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-SITE_ID = 1
+SITE_ID = 2
 
 LOGIN_REDIRECT_URL = '/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

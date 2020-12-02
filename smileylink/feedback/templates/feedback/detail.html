@@ -1,0 +1,16 @@
+{% extends "feedback/base.html" %}
+
+{% block content %}
+  <h1>{{ account.account_name }}</h1>
+  <ul>
+  {% for product in account.product_set.all %}
+      <li>{{ product.id }}</li>
+      <li>{{ product.product_name }}</li>
+      <li>{{ product.product_feedback }}</li>
+  {% endfor %}
+  </ul>
+
+  <form action="{% url 'feedback:edit' account.id %}" method="get">
+      <input type="submit" value="Edit">
+  </form>
+{% endblock %}
